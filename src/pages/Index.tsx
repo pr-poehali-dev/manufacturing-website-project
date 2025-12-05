@@ -182,6 +182,54 @@ const Index = () => {
           </div>
         </section>
 
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <h2 className="text-4xl font-bold text-center mb-4 font-sans text-secondary">Сертификаты и награды</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Наше качество подтверждено международными стандартами и отраслевыми наградами
+            </p>
+            <div className="grid md:grid-cols-4 gap-6">
+              {[
+                {
+                  title: 'ISO 9001:2015',
+                  description: 'Система менеджмента качества',
+                  icon: 'BadgeCheck',
+                  year: '2018'
+                },
+                {
+                  title: 'ISO 14001',
+                  description: 'Экологический менеджмент',
+                  icon: 'Leaf',
+                  year: '2019'
+                },
+                {
+                  title: 'CE Marking',
+                  description: 'Европейское соответствие',
+                  icon: 'Shield',
+                  year: '2020'
+                },
+                {
+                  title: 'Премия года',
+                  description: 'Лучший производитель 2023',
+                  icon: 'Trophy',
+                  year: '2023'
+                }
+              ].map((cert, index) => (
+                <Card key={index} className="hover:shadow-lg transition-all hover:-translate-y-1 text-center">
+                  <CardContent className="p-6">
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon name={cert.icon as any} className="text-primary" size={40} />
+                    </div>
+                    <div className="text-xs text-primary font-semibold mb-2">{cert.year}</div>
+                    <h4 className="font-bold text-lg mb-2">{cert.title}</h4>
+                    <p className="text-sm text-muted-foreground">{cert.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="gallery" className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl font-bold text-center mb-4 font-sans text-secondary">Наше производство</h2>
